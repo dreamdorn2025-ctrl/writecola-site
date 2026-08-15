@@ -155,12 +155,26 @@
   </section>
 
 </main>
-
 <footer class="footer">
   <span>WriteCola</span>
   <span class="footer-dot">·</span>
   <span>Сделано для тех, кто дописывает книги до конца</span>
 </footer>
+
+<!-- 👇 НОВЫЙ БЛОК ДЛЯ АВТОРИЗАЦИИ АДМИНКИ 👇 -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<!-- 👆 КОНЕЦ НОВОГО БЛОКА 👆 -->
 
 <script src="js/script.js"></script>
 </body>
