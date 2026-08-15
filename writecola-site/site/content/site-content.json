@@ -1,0 +1,29 @@
+{
+  "download": {
+    "version": "1.0.0",
+    "size": "86 МБ",
+    "platform": "Windows / macOS",
+    "description": "Загрузите архив, распакуйте и запустите установщик. Работает офлайн, все проекты хранятся у вас на диске.",
+    "url": "downloads/writecola-app.zip"
+  },
+  "guides": [
+    {
+      "title": "Как создать первый проект",
+      "description": "Короткий обзор: с чего начать книгу в WriteCola.",
+      "type": "photo",
+      "image": "content/media/guide-placeholder-1.svg"
+    },
+    {
+      "title": "Ветки и коммиты для рукописи",
+      "description": "Как пробовать альтернативную версию сцены, не теряя основной текст.",
+      "type": "photo",
+      "image": "content/media/guide-placeholder-2.svg"
+    },
+    {
+      "title": "Спринты письма",
+      "description": "Настройка таймера и работа в режиме глубокого фокуса.",
+      "type": "photo",
+      "image": "content/media/guide-placeholder-3.svg"
+    }
+  ]
+}
