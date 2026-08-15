@@ -1,10 +1,10 @@
 {
   "download": {
     "version": "1.0.0",
-    "size": "86 МБ",
-    "platform": "Windows / macOS",
+    "size": "106 МБ",
+    "platform": "Windows/MacOs(soon)",
     "description": "Загрузите архив, распакуйте и запустите установщик. Работает офлайн, все проекты хранятся у вас на диске.",
-    "url": "downloads/writecola-app.zip"
+    "url": "https://github.com/dreamdorn2025-ctrl/writecola-site/releases/download/1.0.0/WriteCola.7z"
   },
   "guides": [
     {
