@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WriteCola — приложение для писателей</title>
+<meta name="description" content="WriteCola — редактор для писателей с корковой доской, карточками персонажей, версионированием книги и таймером спринтов. Скачайте и установите на ПК." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="brand-mark">W</span>
+    <span class="brand-name">WriteCola</span>
+  </a>
+  <nav class="topnav">
+    <a href="#features">Возможности</a>
+    <a href="#guides">Инструкции</a>
+    <a href="#download">Скачать</a>
+  </nav>
+  <a href="#download" class="btn btn-ghost topnav-cta">Скачать</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">редактор для тех, кто пишет книги</p>
+      <h1>
+        Черновик, который<br />
+        помнит каждую <em>версию</em><br />
+        вашей истории.
+      </h1>
+      <p class="lede">
+        WriteCola — рабочий стол для писателя: корковая доска сцен, карточки
+        персонажей, встроенный браузер для сбора материалов и настоящее
+        версионирование текста — ветки и коммиты, как в git, только для книги.
+      </p>
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary">Скачать для ПК</a>
+        <a href="#guides" class="btn btn-outline">Смотреть инструкции</a>
+      </div>
+      <p class="hero-note" id="hero-version-note">Актуальная версия — см. раздел «Скачать»</p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 520 480" class="branch-art">
+        <!-- ствол / рукопись -->
+        <rect x="222" y="34" width="76" height="98" rx="4" class="ba-page" />
+        <line x1="236" y1="54" x2="284" y2="54" class="ba-line" />
+        <line x1="236" y1="66" x2="284" y2="66" class="ba-line" />
+        <line x1="236" y1="78" x2="270" y2="78" class="ba-line" />
+
+        <path d="M260 132 L260 190" class="ba-trunk" />
+
+        <path d="M260 190 C 260 230, 150 220, 120 270" class="ba-branch ba-b1" />
+        <path d="M260 190 C 260 235, 260 250, 260 300" class="ba-branch ba-b2" />
+        <path d="M260 190 C 260 230, 370 220, 400 270" class="ba-branch ba-b3" />
+
+        <path d="M120 270 C 100 310, 100 340, 120 380" class="ba-branch ba-b1b" />
+        <path d="M260 300 L260 380" class="ba-branch ba-b2b" />
+        <path d="M400 270 C 420 310, 420 340, 400 380" class="ba-branch ba-b3b" />
+
+        <circle cx="260" cy="190" r="7" class="ba-node ba-node-root" />
+        <circle cx="120" cy="270" r="6" class="ba-node ba-node-a" />
+        <circle cx="260" cy="300" r="6" class="ba-node ba-node-b" />
+        <circle cx="400" cy="270" r="6" class="ba-node ba-node-c" />
+        <circle cx="120" cy="380" r="6" class="ba-node ba-node-a" />
+        <circle cx="260" cy="380" r="7" class="ba-node ba-node-final" />
+        <circle cx="400" cy="380" r="6" class="ba-node ba-node-c" />
+
+        <text x="130" y="400" class="ba-label">черновик</text>
+        <text x="220" y="400" class="ba-label ba-label-final">финал</text>
+        <text x="365" y="400" class="ba-label">альт. концовка</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <div class="section-head">
+      <p class="eyebrow">внутри приложения</p>
+      <h2>Всё, чтобы довести книгу до точки</h2>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>Корковая доска</h3>
+        <p>Раскладывайте сцены как карточки на пробковой доске: перетаскивайте, группируйте по главам, держите структуру перед глазами.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Персонажи</h3>
+        <p>Карточка на каждого героя — описание, роль, упоминания в тексте и связанные сцены находятся сами.</p>
+      </article>
+      <article class="feature-card feature-card--signature">
+        <h3>Версионирование книги</h3>
+        <p>Ветки и коммиты для рукописи. Пробуйте альтернативную концовку в отдельной ветке, не боясь потерять текущий вариант.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Спринты письма</h3>
+        <p>Таймер для сессий глубокой работы — держит ритм, пока вы пишете черновик, не отвлекаясь на редактуру.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Встроенный браузер</h3>
+        <p>Собирайте референсы и источники, не выходя из приложения. Закладки сохраняются прямо в проекте.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Командная палитра</h3>
+        <p>Любое действие — с клавиатуры. Открыть сцену, переключить ветку, запустить спринт — за пару нажатий.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- GUIDES (dynamic) -->
+  <section id="guides" class="guides">
+    <div class="section-head">
+      <p class="eyebrow">как пользоваться</p>
+      <h2>Видео- и фотоинструкции</h2>
+      <p class="section-sub">Раздел пополняется — новые инструкции по функциям приложения появляются здесь по мере выхода обновлений.</p>
+    </div>
+
+    <div id="guides-grid" class="guides-grid">
+      <!-- заполняется скриптом из content/site-content.json -->
+    </div>
+    <p id="guides-empty" class="guides-empty" hidden>Инструкции скоро появятся здесь.</p>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" class="download">
+    <div class="download-card">
+      <div class="download-info">
+        <p class="eyebrow">установка на ПК</p>
+        <h2>Скачать WriteCola</h2>
+        <p id="download-desc" class="download-desc">
+          Загрузите архив, распакуйте и запустите установщик. Работает офлайн, все проекты хранятся у вас на диске.
+        </p>
+        <dl class="download-meta">
+          <div><dt>Версия</dt><dd id="dl-version">—</dd></div>
+          <div><dt>Размер</dt><dd id="dl-size">—</dd></div>
+          <div><dt>Платформа</dt><dd id="dl-platform">Windows / macOS</dd></div>
+        </dl>
+      </div>
+      <div class="download-action">
+        <a id="download-button" href="#" class="btn btn-primary btn-lg">Скачать архив</a>
+        <p class="download-hint">После скачивания распакуйте .zip и следуйте инструкции внутри архива.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>WriteCola</span>
+  <span class="footer-dot">·</span>
+  <span>Сделано для тех, кто дописывает книги до конца</span>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

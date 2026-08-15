@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "content/media"
+public_folder: "content/media"
+
+publish_mode: simple
+locale: "ru"
+
+collections:
+  - name: "site"
+    label: "Сайт"
+    files:
+      - name: "content"
+        label: "Инструкции и скачивание"
+        file: "content/site-content.json"
+        fields:
+          - label: "Скачивание"
+            name: "download"
+            widget: "object"
+            fields:
+              - { label: "Версия", name: "version", widget: "string" }
+              - { label: "Размер файла", name: "size", widget: "string" }
+              - { label: "Платформа", name: "platform", widget: "string" }
+              - { label: "Описание", name: "description", widget: "text" }
+              - label: "Ссылка на архив (URL)"
+                name: "url"
+                widget: "string"
+                hint: "Прямая ссылка на .zip. Для больших файлов используйте GitHub Releases, Google Диск или Яндекс.Диск, а сюда вставьте прямую ссылку на скачивание."
+          - label: "Инструкции"
+            name: "guides"
+            widget: "list"
+            label_singular: "Инструкция"
+            summary: "{{title}}"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Описание", name: "description", widget: "text", required: false }
+              - label: "Тип"
+                name: "type"
+                widget: "select"
+                options: [{ label: "Фото", value: "photo" }, { label: "Видео (ссылка)", value: "video" }]
+                default: "photo"
+              - label: "Изображение"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Нужно для типа «Фото». Скриншот или картинка-инструкция."
+              - label: "Ссылка на видео"
+                name: "videoUrl"
+                widget: "string"
+                required: false
+                hint: "Нужно для типа «Видео». Ссылка на YouTube или Vimeo (например, загрузите видео на YouTube как «Доступ по ссылке» и вставьте её сюда)."
