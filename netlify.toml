@@ -1,5 +1,5 @@
 [build]
-  publish = "."
+  publish = "writecola-site/site"
 
 [[redirects]]
   from = "/*"
