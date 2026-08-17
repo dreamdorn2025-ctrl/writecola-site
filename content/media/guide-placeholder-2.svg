@@ -1,8 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
-  <rect width="400" height="250" fill="#e8e1d2"/>
-  <g fill="none" stroke="#cf9f2e" stroke-width="2" opacity="0.6">
-    <circle cx="200" cy="125" r="34"/>
-    <path d="M186 125 l10 10 l20 -22" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181a28"/>
+      <stop offset="100%" stop-color="#0e1017"/>
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5cf73"/>
+      <stop offset="100%" stop-color="#d49b29"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bgGrad2)"/>
+  
+  <!-- Git for Writers / Diff View Visual -->
+  <g transform="translate(320, 160)">
+    <!-- Version Diff window left (old draft) -->
+    <rect x="-160" y="-70" width="140" height="110" rx="8" fill="#1b1e2c" stroke="#e57368" stroke-width="2"/>
+    <rect x="-160" y="-70" width="140" height="24" rx="8" fill="#261b20"/>
+    <text x="-90" y="-54" font-family="'JetBrains Mono', monospace" font-size="10" fill="#e57368" text-anchor="middle">v1.2 · Редакция 1</text>
+    <line x1="-145" y1="-30" x2="-40" y2="-30" stroke="#e57368" stroke-width="2" opacity="0.6"/>
+    <line x1="-145" y1="-15" x2="-60" y2="-15" stroke="#e57368" stroke-width="2" opacity="0.6"/>
+    <line x1="-145" y1="0" x2="-80" y2="0" stroke="#e57368" stroke-width="2" opacity="0.6"/>
+    <line x1="-145" y1="15" x2="-50" y2="15" stroke="#e57368" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Central commit arrow -->
+    <path d="M-10,-15 L10,-15 M5,-20 L10,-15 L5,-10" fill="none" stroke="url(#goldGrad2)" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Version Diff window right (new draft / commit) -->
+    <rect x="20" y="-70" width="140" height="110" rx="8" fill="#1b242e" stroke="#4e9c68" stroke-width="2"/>
+    <rect x="20" y="-70" width="140" height="24" rx="8" fill="#182b20"/>
+    <text x="90" y="-54" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4e9c68" text-anchor="middle">Коммит #a9f · Новая</text>
+    <line x1="35" y1="-30" x2="140" y2="-30" stroke="#4e9c68" stroke-width="2" opacity="0.8"/>
+    <line x1="35" y1="-15" x2="120" y2="-15" stroke="#4e9c68" stroke-width="2" opacity="0.8"/>
+    <line x1="35" y1="0" x2="100" y2="0" stroke="#4e9c68" stroke-width="2" opacity="0.8"/>
+    <line x1="35" y1="15" x2="135" y2="15" stroke="#4e9c68" stroke-width="2" opacity="0.8"/>
   </g>
-  <text x="200" y="200" font-family="Inter, sans-serif" font-size="12" fill="#7d7b72" text-anchor="middle">добавьте своё фото/видео через /admin</text>
+  
+  <!-- Badge -->
+  <rect x="200" y="285" width="240" height="32" rx="16" fill="#11131c" stroke="#f5cf73" stroke-width="1" opacity="0.8"/>
+  <text x="320" y="306" font-family="'JetBrains Mono', monospace" font-size="12" fill="#f5cf73" text-anchor="middle" font-weight="600">WriteCola · Git для книги (Diff)</text>
 </svg>

@@ -2,28 +2,162 @@
   "download": {
     "version": "1.0.0",
     "size": "106 МБ",
-    "platform": "Windows/MacOs(soon)",
-    "description": "Загрузите архив, распакуйте и запустите установщик. Работает офлайн, все проекты хранятся у вас на диске.",
-    "url": "https://github.com/dreamdorn2025-ctrl/writecola-site/releases/download/1.0.0/WriteCola.7z"
+    "platform": "Windows (macOS и Linux скоро)",
+    "description": "Загрузите архив, распакуйте и запустите установщик WriteCola. Приложение работает полностью офлайн, сохраняя все черновики и персонажей локально на вашем компьютере.",
+    "url": "https://github.com/dreamdorn2025-ctrl/writecola-site/releases/download/1.0.0/WriteCola.7z",
+    "releaseDate": "16 августа 2026",
+    "requirements": "Windows 10/11 (64-bit), 4 ГБ ОЗУ, 300 МБ свободного места на диске."
   },
-  "guides": [
+  "tutorials": [
     {
-      "title": "Как создать первый проект",
-      "description": "Короткий обзор: с чего начать книгу в WriteCola.",
-      "type": "photo",
-      "image": "content/media/guide-placeholder-1.svg"
+      "id": "intro-quick-start",
+      "title": "Быстрый старт: первое знакомство с WriteCola за 5 минут",
+      "description": "Пошаговый разбор интерфейса: создание первой книги, навигация по главам, написание первого текста и сохранение.",
+      "category": "quickstart",
+      "categoryLabel": "Быстрый старт",
+      "level": "Базовый",
+      "duration": "05:14",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-1.svg",
+      "featured": true,
+      "date": "2026-08-10",
+      "timestamps": [
+        { "time": "00:00", "title": "Введение и запуск" },
+        { "time": "01:10", "title": "Создание нового проекта книги" },
+        { "time": "02:45", "title": "Структура глав и первая сцена" },
+        { "time": "04:20", "title": "Режим фокуса и сохранение" }
+      ]
     },
     {
-      "title": "Ветки и коммиты для рукописи",
-      "description": "Как пробовать альтернативную версию сцены, не теряя основной текст.",
-      "type": "photo",
-      "image": "content/media/guide-placeholder-2.svg"
+      "id": "git-for-writers-guide",
+      "title": "Git для книги: контрольные точки (коммиты) и история рукописи",
+      "description": "Как работает встроенный Git: сохранение контрольных точек, просмотр истории правок, откат неудачных изменений и сравнение версий текста (Diff).",
+      "category": "versioning",
+      "categoryLabel": "Git для книги",
+      "level": "Базовый",
+      "duration": "08:42",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-2.svg",
+      "featured": true,
+      "date": "2026-08-12",
+      "timestamps": [
+        { "time": "00:00", "title": "Зачем писателю система контроля версий (Git)" },
+        { "time": "02:15", "title": "Создание первой контрольной точки (коммита)" },
+        { "time": "05:30", "title": "Просмотр истории изменений главы" },
+        { "time": "07:20", "title": "Сравнение черновика с предыдущей версией" }
+      ]
     },
     {
-      "title": "Спринты письма",
-      "description": "Настройка таймера и работа в режиме глубокого фокуса.",
-      "type": "photo",
-      "image": "content/media/guide-placeholder-3.svg"
+      "id": "project-map-hierarchy",
+      "title": "Карта проекта: перемещение глав, страниц и папок",
+      "description": "Как устроена иерархия книги в WriteCola: перетаскивание глав мышью, организация сцен по папкам и компактный обзор структуры романа.",
+      "category": "structure",
+      "categoryLabel": "Карта проекта",
+      "level": "Базовый",
+      "duration": "06:15",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-3.svg",
+      "featured": true,
+      "date": "2026-08-13",
+      "timestamps": [
+        { "time": "00:00", "title": "Обзор дерева проекта" },
+        { "time": "01:40", "title": "Создание папок и группировка глав" },
+        { "time": "03:20", "title": "Drag-and-Drop: изменение порядка сцен" },
+        { "time": "05:00", "title": "Компактный режим для длинных романов" }
+      ]
+    },
+    {
+      "id": "characters-catalog",
+      "title": "Раздел «Персонажи»: каталог героев и связи со сценами",
+      "description": "Как вести карточки всех персонажей книги в одном месте: описание внешности, мотивация, роли и отслеживание упоминаний по тексту.",
+      "category": "characters",
+      "categoryLabel": "Персонажи",
+      "level": "Базовый",
+      "duration": "07:30",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-1.svg",
+      "featured": false,
+      "date": "2026-08-14",
+      "timestamps": [
+        { "time": "00:00", "title": "Открытие раздела «Персонажи»" },
+        { "time": "02:00", "title": "Заполнение досье героя" },
+        { "time": "04:15", "title": "Фильтрация и роли в сюжете" },
+        { "time": "06:10", "title": "Быстрый поиск сцен с участием персонажа" }
+      ]
+    },
+    {
+      "id": "split-screen-mode",
+      "title": "Сплит-экран: одновременная работа с двумя текстами и заметками",
+      "description": "Настройка двухпанельного режима: как открыть черновик и референсы бок о бок, сравнить две сцены или переводить текст.",
+      "category": "split",
+      "categoryLabel": "Сплит-экран",
+      "level": "Базовый",
+      "duration": "04:50",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-2.svg",
+      "featured": false,
+      "date": "2026-08-15",
+      "timestamps": [
+        { "time": "00:00", "title": "Включение сплит-экрана" },
+        { "time": "01:20", "title": "Открытие черновика и заметок рядом" },
+        { "time": "03:00", "title": "Сравнение двух редакций одной главы" }
+      ]
+    },
+    {
+      "id": "book-statistics-insights",
+      "title": "Статистика книги: анализ объема, темпа письма и времени чтения",
+      "description": "Как отслеживать писательский прогресс: подсчет слов и символов, динамика по главам и расчет времени чтения для читателей.",
+      "category": "stats",
+      "categoryLabel": "Статистика",
+      "level": "Базовый",
+      "duration": "05:20",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-3.svg",
+      "featured": false,
+      "date": "2026-08-15",
+      "timestamps": [
+        { "time": "00:00", "title": "Где смотреть статистику книги" },
+        { "time": "01:30", "title": "Аналитика объема по главам" },
+        { "time": "03:15", "title": "Графики скорости и темпа письма" }
+      ]
+    },
+    {
+      "id": "writing-sprints-focus",
+      "title": "Спринты письма: разгоняем продуктивность и побеждаем ступор",
+      "description": "Настройка таймера сессий, режим непрерывной печати без редактуры и аналитика количества написанных слов.",
+      "category": "sprints",
+      "categoryLabel": "Спринты и фокус",
+      "level": "Базовый",
+      "duration": "07:15",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-1.svg",
+      "featured": true,
+      "date": "2026-08-16",
+      "timestamps": [
+        { "time": "00:00", "title": "Психология писательских спринтов" },
+        { "time": "01:40", "title": "Настройка таймера и целей по словам" },
+        { "time": "04:10", "title": "Режим безжалостного черновика" },
+        { "time": "06:00", "title": "Статистика и графики продуктивности" }
+      ]
+    },
+    {
+      "id": "export-and-formatting",
+      "title": "Экспорт книги: в ePub, FB2, PDF и DOCX в идеальном качестве",
+      "description": "Подготовка рукописи к печати или публикации на ЛитРес / Author.Today / Самиздат с автосборкой оглавления.",
+      "category": "export",
+      "categoryLabel": "Экспорт и верстка",
+      "level": "Базовый",
+      "duration": "09:10",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "image": "content/media/guide-placeholder-2.svg",
+      "featured": false,
+      "date": "2026-08-16",
+      "timestamps": [
+        { "time": "00:00", "title": "Выбор формата экспорта" },
+        { "time": "02:30", "title": "Настройка шрифтов и полей страницы" },
+        { "time": "05:45", "title": "Сборка оглавления и колонтитулов" },
+        { "time": "07:50", "title": "Экспорт для самиздата и печатных версий" }
+      ]
     }
   ]
 }

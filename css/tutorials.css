@@ -1,0 +1,591 @@
+/* ==========================================================================
+   WriteCola Tutorials & Video Lessons Hub CSS
+   ========================================================================== */
+
+/* Tutorials Page Hero */
+.tutorials-hero {
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.breadcrumbs a:hover {
+  color: var(--gold-light);
+}
+
+.breadcrumbs-sep {
+  opacity: 0.4;
+}
+
+.tutorials-hero h1 {
+  font-size: clamp(32px, 4.5vw, 48px);
+  margin-bottom: 14px;
+}
+
+.tutorials-hero p {
+  font-size: 16.5px;
+  color: var(--text-mid);
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+/* Search & Filter Bar */
+.tutorials-controls {
+  max-width: 960px;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-box-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--text-dim);
+  pointer-events: none;
+  transition: color var(--trans-fast);
+}
+
+.tutorial-search-input {
+  width: 100%;
+  padding: 16px 20px 16px 54px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  color: var(--text-hi);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  outline: none;
+  transition: border-color var(--trans-fast), box-shadow var(--trans-fast);
+}
+
+.tutorial-search-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+.tutorial-search-input:focus + .search-icon {
+  color: var(--gold-light);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 4px;
+  display: none;
+}
+
+.clear-search-btn:hover {
+  color: var(--text-hi);
+}
+
+/* Category Filter Pills */
+.category-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-pill {
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-pill:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+  color: var(--text-hi);
+}
+
+.filter-pill.active {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.filter-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+}
+
+.filter-pill.active .filter-count {
+  background: rgba(212, 155, 41, 0.3);
+  color: #fff;
+}
+
+/* Secondary Meta Bar (Count & Watched stats) */
+.tutorials-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+.watched-stats-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--moss-light);
+  background: rgba(78, 156, 104, 0.12);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(78, 156, 104, 0.25);
+}
+
+/* Tutorials Grid */
+.tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+/* Video Card */
+.video-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-fast), border-color var(--trans-fast), box-shadow var(--trans-fast);
+  position: relative;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+
+.video-card.watched {
+  border-color: rgba(78, 156, 104, 0.35);
+}
+
+.video-card-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0f1118;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.video-card:hover .video-card-thumb img {
+  transform: scale(1.04);
+}
+
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 10, 15, 0.4);
+  display: grid;
+  place-items: center;
+  transition: background var(--trans-fast);
+}
+
+.video-card:hover .video-play-overlay {
+  background: rgba(9, 10, 15, 0.2);
+}
+
+.play-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: #121008;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast);
+}
+
+.play-circle svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 3px;
+  fill: currentColor;
+}
+
+.video-card:hover .play-circle {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(212, 155, 41, 0.6);
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(9, 10, 15, 0.88);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-level-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(9, 10, 15, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+}
+
+.level-basic { color: var(--moss-light); border-color: rgba(78, 156, 104, 0.4); }
+.level-pro { color: var(--crimson-light); border-color: rgba(200, 80, 70, 0.4); }
+.level-medium { color: var(--azure-light); border-color: rgba(61, 136, 232, 0.4); }
+
+.video-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.video-category-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.video-card-title {
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color var(--trans-fast);
+}
+
+.video-card-title:hover {
+  color: var(--gold-light);
+}
+
+.video-card-desc {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* Timestamps Accordion inside Card */
+.video-timestamps {
+  background: rgba(9, 10, 15, 0.45);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 18px;
+}
+
+.timestamps-toggle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.timestamps-toggle:hover {
+  color: var(--text-hi);
+}
+
+.timestamps-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.timestamp-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text-mid);
+  transition: color var(--trans-fast);
+}
+
+.timestamp-item:hover {
+  color: var(--gold-light);
+}
+
+.timestamp-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold);
+  background: rgba(212, 155, 41, 0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Card Actions */
+.video-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.watch-btn {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gold-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.watch-btn:hover {
+  color: #fff;
+}
+
+.mark-watched-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.mark-watched-btn:hover {
+  border-color: var(--moss);
+  color: var(--moss-light);
+}
+
+.video-card.watched .mark-watched-btn {
+  background: rgba(78, 156, 104, 0.15);
+  border-color: var(--moss);
+  color: var(--moss-light);
+}
+
+/* Empty State */
+.tutorials-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tutorials-empty h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.tutorials-empty p {
+  color: var(--text-mid);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Video Modal Player
+   ========================================================================== */
+
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(5, 6, 9, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.video-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-modal-dialog {
+  width: 100%;
+  max-width: 980px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-modal-backdrop.open .video-modal-dialog {
+  transform: scale(1);
+}
+
+.video-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.video-modal-title {
+  font-size: 17px;
+  color: var(--text-hi);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.video-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-mid);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  transition: color var(--trans-fast), background var(--trans-fast);
+}
+
+.video-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.video-modal-player-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: #000;
+}
+
+.video-modal-player-wrap iframe,
+.video-modal-player-wrap video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-modal-footer {
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-timestamps-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-timestamps-row span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+@media (max-width: 640px) {
+  .tutorials-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-modal-dialog {
+    border-radius: var(--radius-md);
+  }
+  .video-modal-backdrop {
+    padding: 12px;
+  }
+}

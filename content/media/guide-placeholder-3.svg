@@ -1,8 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
-  <rect width="400" height="250" fill="#e8e1d2"/>
-  <g fill="none" stroke="#cf9f2e" stroke-width="2" opacity="0.6">
-    <circle cx="200" cy="125" r="34"/>
-    <path d="M186 125 l10 10 l20 -22" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161826"/>
+      <stop offset="100%" stop-color="#0b0d13"/>
+    </linearGradient>
+    <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5cf73"/>
+      <stop offset="100%" stop-color="#d49b29"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bgGrad3)"/>
+  
+  <!-- Branch & Git Tree Graphic -->
+  <g transform="translate(320, 150)">
+    <!-- Central branch -->
+    <path d="M-120,40 L-40,0 L60,0 L140,-40" fill="none" stroke="url(#goldGrad3)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Alt Branch -->
+    <path d="M-40,0 C0,40 60,40 100,50" fill="none" stroke="#c85046" stroke-width="2.5" stroke-dasharray="5,4" stroke-linecap="round"/>
+    
+    <!-- Nodes -->
+    <circle cx="-120" cy="40" r="7" fill="#141724" stroke="#f5cf73" stroke-width="3"/>
+    <circle cx="-40" cy="0" r="6" fill="#141724" stroke="#f5cf73" stroke-width="2.5"/>
+    <circle cx="60" cy="0" r="6" fill="#141724" stroke="#f5cf73" stroke-width="2.5"/>
+    <circle cx="140" cy="-40" r="8" fill="#f5cf73" stroke="#f5cf73" stroke-width="2"/>
+    <circle cx="100" cy="50" r="6" fill="#141724" stroke="#c85046" stroke-width="2.5"/>
+    
+    <!-- Labels -->
+    <text x="-120" y="65" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b8b4a8" text-anchor="middle">v1.0</text>
+    <text x="140" y="-55" font-family="'JetBrains Mono', monospace" font-size="11" fill="#f5cf73" text-anchor="middle" font-weight="600">Release</text>
+    <text x="100" y="72" font-family="'JetBrains Mono', monospace" font-size="10" fill="#c85046" text-anchor="middle">alt-ending</text>
   </g>
-  <text x="200" y="200" font-family="Inter, sans-serif" font-size="12" fill="#7d7b72" text-anchor="middle">добавьте своё фото/видео через /admin</text>
+  
+  <!-- Badge -->
+  <rect x="220" y="285" width="200" height="32" rx="16" fill="#11131c" stroke="#f5cf73" stroke-width="1" opacity="0.8"/>
+  <text x="320" y="306" font-family="'JetBrains Mono', monospace" font-size="12" fill="#f5cf73" text-anchor="middle" font-weight="600">WriteCola · Ветки и версионирование</text>
 </svg>

@@ -1,8 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
-  <rect width="400" height="250" fill="#e8e1d2"/>
-  <g fill="none" stroke="#cf9f2e" stroke-width="2" opacity="0.6">
-    <circle cx="200" cy="125" r="34"/>
-    <path d="M186 125 l10 10 l20 -22" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141724"/>
+      <stop offset="100%" stop-color="#0c0d14"/>
+    </linearGradient>
+    <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5cf73"/>
+      <stop offset="100%" stop-color="#d49b29"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bgGrad1)"/>
+  
+  <!-- Subtle grid lines -->
+  <g opacity="0.1" stroke="#f5f3ec" stroke-width="1">
+    <line x1="0" y1="90" x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+    <line x1="160" y1="0" x2="160" y2="360"/>
+    <line x1="320" y1="0" x2="320" y2="360"/>
+    <line x1="480" y1="0" x2="480" y2="360"/>
   </g>
-  <text x="200" y="200" font-family="Inter, sans-serif" font-size="12" fill="#7d7b72" text-anchor="middle">добавьте своё фото/видео через /admin</text>
+  
+  <!-- Center Book / Workspace Art -->
+  <g transform="translate(320, 160)">
+    <!-- Book open -->
+    <path d="M-90,-50 C-40,-60 -10,-45 0,-30 C10,-45 40,-60 90,-50 L90,50 C40,40 10,55 0,70 C-10,55 -40,40 -90,50 Z" fill="#1b2033" stroke="url(#goldGrad1)" stroke-width="2.5"/>
+    <line x1="0" y1="-30" x2="0" y2="70" stroke="url(#goldGrad1)" stroke-width="2"/>
+    
+    <!-- Manuscript lines left page -->
+    <line x1="-70" y1="-30" x2="-20" y2="-30" stroke="#f5cf73" stroke-width="2" opacity="0.5"/>
+    <line x1="-70" y1="-10" x2="-20" y2="-10" stroke="#f5cf73" stroke-width="2" opacity="0.5"/>
+    <line x1="-70" y1="10" x2="-35" y2="10" stroke="#f5cf73" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Manuscript lines right page -->
+    <line x1="20" y1="-30" x2="70" y2="-30" stroke="#f5cf73" stroke-width="2" opacity="0.5"/>
+    <line x1="20" y1="-10" x2="70" y2="-10" stroke="#f5cf73" stroke-width="2" opacity="0.5"/>
+    <line x1="20" y1="10" x2="55" y2="10" stroke="#f5cf73" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Feather quill / Pen -->
+    <path d="M40,-70 Q60,-40 25,0" fill="none" stroke="#e57368" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Badge / Caption -->
+  <rect x="220" y="285" width="200" height="32" rx="16" fill="#11131c" stroke="#f5cf73" stroke-width="1" opacity="0.8"/>
+  <text x="320" y="306" font-family="'JetBrains Mono', monospace" font-size="12" fill="#f5cf73" text-anchor="middle" font-weight="600">WriteCola · Видеоурок</text>
 </svg>

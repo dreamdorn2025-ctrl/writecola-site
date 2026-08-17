@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Видеоуроки и база знаний WriteCola — Видео-гайды для авторов</title>
+  <meta name="description" content="Полный каталог обучающих видеоуроков по WriteCola: быстрый старт, Git для книги, ветки и коммиты для рукописи, ноды сюжета, таймер спринтов, карточки персонажей и экспорт." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="content/media/favicon.svg" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/tutorials.css" />
+</head>
+<body>
+
+  <!-- Background Grain & Glow -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <img src="content/media/logo.svg" alt="WriteCola Logo" class="brand-logo-img" width="40" height="40" />
+        <div class="brand-text">
+          <span class="brand-name">Write<span>Cola</span></span>
+          <span class="brand-badge">Studio for Authors</span>
+        </div>
+      </a>
+
+      <nav class="topnav" id="topnav-menu">
+        <a href="index.html#features" class="topnav-link">Возможности</a>
+        <a href="index.html#sprint-demo" class="topnav-link">Спринты</a>
+        <a href="tutorials.html" class="topnav-link active">Видеоуроки <span class="nav-tag">База</span></a>
+        <a href="index.html#download" class="topnav-link">Скачать</a>
+        <a href="index.html#faq" class="topnav-link">Вопросы</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a href="index.html#download" class="btn btn-primary" style="padding: 9px 20px; font-size: 13.5px;">Скачать ПК</a>
+        <button class="mobile-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- TUTORIALS HUB HERO -->
+    <section class="tutorials-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Главная</a>
+          <span class="breadcrumbs-sep">/</span>
+          <span>Видеоуроки и инструкции</span>
+        </div>
+
+        <div class="eyebrow">обучающий центр</div>
+        <h1>Видеоуроки и база знаний WriteCola</h1>
+        <p>
+          Освойте все секреты продуктивного писательства: от работы с Git для книги и нодами сюжета до управления версиями текста и настройки таймера спринтов.
+        </p>
+
+        <!-- SEARCH & CONTROLS -->
+        <div class="tutorials-controls">
+          <div class="search-box-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input 
+              type="text" 
+              id="tutorial-search-input" 
+              class="tutorial-search-input" 
+              placeholder="Поиск по урокам (например: git, ветки, коммиты, таймер, экспорт)..." 
+              autocomplete="off"
+            />
+            <button id="clear-search-btn" class="clear-search-btn" title="Очистить поиск">✕</button>
+          </div>
+
+          <!-- Category filter pills -->
+          <div class="category-filter-bar" id="category-filter-bar">
+            <button class="filter-pill active" data-category="all">
+              Все уроки
+            </button>
+            <button class="filter-pill" data-category="quickstart">
+              Быстрый старт
+            </button>
+            <button class="filter-pill" data-category="versioning">
+              Git для книги
+            </button>
+            <button class="filter-pill" data-category="structure">
+              Карта проекта
+            </button>
+            <button class="filter-pill" data-category="characters">
+              Персонажи
+            </button>
+            <button class="filter-pill" data-category="split">
+              Сплит-экран
+            </button>
+            <button class="filter-pill" data-category="stats">
+              Статистика
+            </button>
+            <button class="filter-pill" data-category="sprints">
+              Спринты
+            </button>
+            <button class="filter-pill" data-category="export">
+              Экспорт
+            </button>
+          </div>
+        </div>
+
+        <!-- COUNTER AND WATCHED PROGRESS BAR -->
+        <div class="tutorials-meta-bar">
+          <div>
+            <span>Найдено уроков: <strong id="total-tutorials-count">8</strong></span>
+          </div>
+
+          <div class="watched-stats-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span id="watched-stats-text">0 из 8 просмотрено</span>
+          </div>
+        </div>
+
+        <!-- TUTORIALS GRID (Populated dynamically) -->
+        <div id="tutorials-grid" class="tutorials-grid">
+          <!-- Dynamic cards rendered by js/tutorials.js -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div id="tutorials-empty" class="tutorials-empty" hidden>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" stroke-width="1.5" style="margin: 0 auto 16px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <h3>Уроки не найдены</h3>
+          <p>Попробуйте изменить поисковый запрос или выбрать другую категорию в фильтре выше.</p>
+          <button class="btn btn-secondary" onclick="document.querySelector('[data-category=all]').click(); document.getElementById('tutorial-search-input').value=''; document.getElementById('tutorial-search-input').dispatchEvent(new Event('input'));">
+            Показать все уроки
+          </button>
+        </div>
+
+        <!-- SUGGEST LESSON TOPIC BANNER -->
+        <div class="hub-banner-cta" style="margin-top: 50px;">
+          <div class="hub-banner-content">
+            <div class="eyebrow" style="color: var(--gold-light);">обратная связь</div>
+            <h3>Не нашли нужную тему или инструкцию?</h3>
+            <p>Напишите нам напрямую на почту <strong style="color: var(--gold-light);">dreamdorn2025@gmail.com</strong>, какую функцию или писательскую технику разобрать в следующем видеоуроке.</p>
+          </div>
+          <a href="mailto:dreamdorn2025@gmail.com?subject=Предложение%20темы%20видеоурока%20WriteCola" class="btn btn-secondary btn-lg">
+            Предложить тему урока (Email)
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL VIDEO PLAYER DIALOG -->
+  <div id="video-modal" class="video-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+    <div class="video-modal-dialog">
+      <div class="video-modal-header">
+        <div id="video-modal-title" class="video-modal-title">Воспроизведение урока</div>
+        <button id="video-modal-close" class="video-modal-close" aria-label="Закрыть плеер">✕</button>
+      </div>
+
+      <div id="video-modal-player-wrap" class="video-modal-player-wrap">
+        <!-- iframe or video dynamically injected -->
+      </div>
+
+      <div class="video-modal-footer">
+        <div id="video-modal-footer-content">
+          <!-- Timestamps / chapters -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="content/media/logo.svg" alt="WriteCola Logo" class="brand-logo-img" width="36" height="36" />
+            <div class="brand-text">
+              <span class="brand-name">Write<span>Cola</span></span>
+              <span class="brand-badge">Studio for Authors</span>
+            </div>
+          </div>
+          <p>Специализированный редактор для тех, кто дописывает книги до конца.</p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Возможности</a></li>
+            <li><a href="tutorials.html">Каталог видеоуроков</a></li>
+            <li><a href="index.html#sprint-demo">Спринты письма</a></li>
+            <li><a href="index.html#download">Скачать установщик</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Обратная связь & Ссылки</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:dreamdorn2025@gmail.com">Написать разработчику (dreamdorn2025@gmail.com)</a></li>
+            <li><a href="https://github.com/dreamdorn2025-ctrl/writecola-site/releases" target="_blank" rel="noopener">Архив релизов</a></li>
+            <li><span style="font-family: var(--font-mono); font-size: 12px; color: var(--gold-light);">👁️ Просмотров: <span id="footer-visits-count">1 240</span></span></li>
+            <li><span style="font-family: var(--font-mono); font-size: 12px; color: var(--moss-light);">📥 Скачиваний: <span id="footer-downloads-count">310</span></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 WriteCola. Все права защищены.</span>
+        <span>Связь: <a href="mailto:dreamdorn2025@gmail.com" style="color: var(--gold-light);">dreamdorn2025@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script src="js/tutorials.js"></script>
+</body>
+</html>

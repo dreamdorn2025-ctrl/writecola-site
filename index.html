@@ -1,167 +1,490 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>WriteCola — приложение для писателей</title>
-<meta name="description" content="WriteCola — редактор для писателей с корковой доской, карточками персонажей, версионированием книги и таймером спринтов. Скачайте и установите на ПК." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WriteCola — Редактор для писателей с Git для книги и версионированием рукописи</title>
+  <meta name="description" content="WriteCola — профессиональный рабочий стол для писателей. Встроенный Git для книги: ветки и коммиты для рукописи, ноды сюжета, карточки персонажей, таймер спринтов и экспорт." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="content/media/favicon.svg" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/tutorials.css" />
 </head>
 <body>
 
-<div class="grain"></div>
+  <!-- Background Grain & Glow Effects -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
 
-<header class="topbar">
-  <a class="brand" href="#top">
-    <span class="brand-mark">W</span>
-    <span class="brand-name">WriteCola</span>
-  </a>
-  <nav class="topnav">
-    <a href="#features">Возможности</a>
-    <a href="#guides">Инструкции</a>
-    <a href="#download">Скачать</a>
-  </nav>
-  <a href="#download" class="btn btn-ghost topnav-cta">Скачать</a>
-</header>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <img src="content/media/logo.svg" alt="WriteCola Logo" class="brand-logo-img" width="40" height="40" />
+        <div class="brand-text">
+          <span class="brand-name">Write<span>Cola</span></span>
+          <span class="brand-badge">Studio for Authors</span>
+        </div>
+      </a>
 
-<main id="top">
+      <nav class="topnav" id="topnav-menu">
+        <a href="#features" class="topnav-link">Возможности</a>
+        <a href="#sprint-demo" class="topnav-link">Спринты</a>
+        <a href="tutorials.html" class="topnav-link active">Видеоуроки <span class="nav-tag">Каталог</span></a>
+        <a href="#download" class="topnav-link">Скачать</a>
+        <a href="#faq" class="topnav-link">Вопросы</a>
+      </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">редактор для тех, кто пишет книги</p>
-      <h1>
-        Черновик, который<br />
-        помнит каждую <em>версию</em><br />
-        вашей истории.
-      </h1>
-      <p class="lede">
-        WriteCola — рабочий стол для писателя: корковая доска сцен, карточки
-        персонажей, встроенный браузер для сбора материалов и настоящее
-        версионирование текста — ветки и коммиты, как в git, только для книги.
-      </p>
-      <div class="hero-actions">
-        <a href="#download" class="btn btn-primary">Скачать для ПК</a>
-        <a href="#guides" class="btn btn-outline">Смотреть инструкции</a>
-      </div>
-      <p class="hero-note" id="hero-version-note">Актуальная версия — см. раздел «Скачать»</p>
-    </div>
-
-    <div class="hero-visual" aria-hidden="true">
-      <svg viewBox="0 0 520 480" class="branch-art">
-        <!-- ствол / рукопись -->
-        <rect x="222" y="34" width="76" height="98" rx="4" class="ba-page" />
-        <line x1="236" y1="54" x2="284" y2="54" class="ba-line" />
-        <line x1="236" y1="66" x2="284" y2="66" class="ba-line" />
-        <line x1="236" y1="78" x2="270" y2="78" class="ba-line" />
-
-        <path d="M260 132 L260 190" class="ba-trunk" />
-
-        <path d="M260 190 C 260 230, 150 220, 120 270" class="ba-branch ba-b1" />
-        <path d="M260 190 C 260 235, 260 250, 260 300" class="ba-branch ba-b2" />
-        <path d="M260 190 C 260 230, 370 220, 400 270" class="ba-branch ba-b3" />
-
-        <path d="M120 270 C 100 310, 100 340, 120 380" class="ba-branch ba-b1b" />
-        <path d="M260 300 L260 380" class="ba-branch ba-b2b" />
-        <path d="M400 270 C 420 310, 420 340, 400 380" class="ba-branch ba-b3b" />
-
-        <circle cx="260" cy="190" r="7" class="ba-node ba-node-root" />
-        <circle cx="120" cy="270" r="6" class="ba-node ba-node-a" />
-        <circle cx="260" cy="300" r="6" class="ba-node ba-node-b" />
-        <circle cx="400" cy="270" r="6" class="ba-node ba-node-c" />
-        <circle cx="120" cy="380" r="6" class="ba-node ba-node-a" />
-        <circle cx="260" cy="380" r="7" class="ba-node ba-node-final" />
-        <circle cx="400" cy="380" r="6" class="ba-node ba-node-c" />
-
-        <text x="130" y="400" class="ba-label">черновик</text>
-        <text x="220" y="400" class="ba-label ba-label-final">финал</text>
-        <text x="365" y="400" class="ba-label">альт. концовка</text>
-      </svg>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" class="features">
-    <div class="section-head">
-      <p class="eyebrow">внутри приложения</p>
-      <h2>Всё, чтобы довести книгу до точки</h2>
-    </div>
-
-    <div class="feature-grid">
-      <article class="feature-card">
-        <h3>Корковая доска</h3>
-        <p>Раскладывайте сцены как карточки на пробковой доске: перетаскивайте, группируйте по главам, держите структуру перед глазами.</p>
-      </article>
-      <article class="feature-card">
-        <h3>Персонажи</h3>
-        <p>Карточка на каждого героя — описание, роль, упоминания в тексте и связанные сцены находятся сами.</p>
-      </article>
-      <article class="feature-card feature-card--signature">
-        <h3>Версионирование книги</h3>
-        <p>Ветки и коммиты для рукописи. Пробуйте альтернативную концовку в отдельной ветке, не боясь потерять текущий вариант.</p>
-      </article>
-      <article class="feature-card">
-        <h3>Спринты письма</h3>
-        <p>Таймер для сессий глубокой работы — держит ритм, пока вы пишете черновик, не отвлекаясь на редактуру.</p>
-      </article>
-      <article class="feature-card">
-        <h3>Встроенный браузер</h3>
-        <p>Собирайте референсы и источники, не выходя из приложения. Закладки сохраняются прямо в проекте.</p>
-      </article>
-      <article class="feature-card">
-        <h3>Командная палитра</h3>
-        <p>Любое действие — с клавиатуры. Открыть сцену, переключить ветку, запустить спринт — за пару нажатий.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- GUIDES (dynamic) -->
-  <section id="guides" class="guides">
-    <div class="section-head">
-      <p class="eyebrow">как пользоваться</p>
-      <h2>Видео- и фотоинструкции</h2>
-      <p class="section-sub">Раздел пополняется — новые инструкции по функциям приложения появляются здесь по мере выхода обновлений.</p>
-    </div>
-
-    <div id="guides-grid" class="guides-grid">
-      <!-- заполняется скриптом из content/site-content.json -->
-    </div>
-    <p id="guides-empty" class="guides-empty" hidden>Инструкции скоро появятся здесь.</p>
-  </section>
-
-  <!-- DOWNLOAD -->
-  <section id="download" class="download">
-    <div class="download-card">
-      <div class="download-info">
-        <p class="eyebrow">установка на ПК</p>
-        <h2>Скачать WriteCola</h2>
-        <p id="download-desc" class="download-desc">
-          Загрузите архив, распакуйте и запустите установщик. Работает офлайн, все проекты хранятся у вас на диске.
-        </p>
-        <dl class="download-meta">
-          <div><dt>Версия</dt><dd id="dl-version">—</dd></div>
-          <div><dt>Размер</dt><dd id="dl-size">—</dd></div>
-          <div><dt>Платформа</dt><dd id="dl-platform">Windows / macOS</dd></div>
-        </dl>
-      </div>
-      <div class="download-action">
-        <a id="download-button" href="#" class="btn btn-primary btn-lg">Скачать архив</a>
-        <p class="download-hint">После скачивания распакуйте .zip и следуйте инструкции внутри архива.</p>
+      <div class="topbar-actions">
+        <a href="tutorials.html" class="btn btn-secondary" style="padding: 9px 18px; font-size: 13.5px;">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Видеоуроки
+        </a>
+        <a href="#download" class="btn btn-primary" style="padding: 9px 20px; font-size: 13.5px;">Скачать</a>
+        
+        <button class="mobile-toggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-</main>
+  <main id="main-content">
 
-<footer class="footer">
-  <span>WriteCola</span>
-  <span class="footer-dot">·</span>
-  <span>Сделано для тех, кто дописывает книги до конца</span>
-</footer>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span id="hero-version-badge">WriteCola v1.0.0 доступна для загрузки</span>
+          </div>
 
-<script src="js/script.js"></script>
+          <h1>
+            Черновик, который помнит каждую <em>версию</em> вашей истории.
+          </h1>
+
+          <p class="hero-lead">
+            WriteCola — это рабочий стол для авторов с полноценным Git для рукописи: ветки (branches) для альтернативных сцен, контрольные точки (commits), карточки персонажей и таймер спринтов для глубокой работы над книгой.
+          </p>
+
+          <div class="hero-actions">
+            <a id="hero-download-btn" href="#download" class="btn btn-primary btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Скачать для Windows
+            </a>
+            <a href="tutorials.html" class="btn btn-secondary btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Каталог видеоуроков
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              100% Офлайн и приватно
+            </span>
+            <span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Без подписок и рекламы
+            </span>
+          </div>
+        </div>
+
+        <!-- Interactive Hero Branch Visualization -->
+        <div class="hero-visual">
+          <div class="branch-visual-card">
+            <div class="branch-card-header">
+              <div class="branch-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v12M18 9a9 9 0 0 0-9 9"/></svg>
+                <span>Ноды сюжета (Экспериментально)</span>
+              </div>
+              <div class="branch-card-dots">
+                <span style="background: var(--gold); box-shadow: 0 0 6px var(--gold);"></span><span></span><span></span>
+              </div>
+            </div>
+
+            <svg viewBox="0 0 460 340" class="branch-svg" aria-label="Интерактивное дерево версий">
+              <!-- Background card elements -->
+              <rect x="180" y="20" width="100" height="42" rx="6" class="ba-bg-box" />
+              <text x="230" y="46" text-anchor="middle" class="ba-text-bright">Глава 1: Завязка</text>
+
+              <!-- Main trunk line -->
+              <path d="M230 62 L230 110" class="ba-branch ba-b-main" />
+
+              <!-- Split branches -->
+              <path d="M230 110 C 230 150, 110 140, 90 190" class="ba-branch ba-b-draft" />
+              <path d="M230 110 C 230 155, 230 160, 230 200" class="ba-branch ba-b-main" />
+              <path d="M230 110 C 230 150, 350 140, 370 190" class="ba-branch ba-b-alt" />
+
+              <!-- Sub continuations -->
+              <path d="M90 190 C 70 230, 80 250, 110 270" class="ba-branch ba-b-draft" />
+              <path d="M230 200 L230 270" class="ba-branch ba-b-main" />
+              <path d="M370 190 C 390 230, 360 250, 240 270" class="ba-branch ba-b-alt" />
+
+              <!-- Nodes with data attributes for hover/click interaction -->
+              <circle cx="230" cy="110" r="7" class="ba-node ba-node-root" data-node-type="root" />
+              <circle cx="90" cy="190" r="6" class="ba-node ba-node-draft" data-node-type="draft" />
+              <circle cx="230" cy="200" r="6" class="ba-node ba-node-root" data-node-type="checkpoint" />
+              <circle cx="370" cy="190" r="6" class="ba-node ba-node-alt" data-node-type="alt" />
+              <circle cx="230" cy="270" r="8" class="ba-node ba-node-final" data-node-type="final" />
+
+              <!-- Labels -->
+              <text x="90" y="215" text-anchor="middle" class="ba-text-dim">черновик сцены</text>
+              <text x="370" y="215" text-anchor="middle" class="ba-text-dim">альт. концовка</text>
+              <text x="230" y="300" text-anchor="middle" class="ba-text-bright" fill="var(--gold-light)">финальный релиз</text>
+            </svg>
+
+            <!-- Dynamic Node Info display -->
+            <div class="tree-info-box">
+              <span id="branch-active-label"><strong>Ноды сюжета:</strong> Ветка main</span>
+              <span id="branch-active-details">Кликните по узлу (ноде)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS / HIGHLIGHTS BAR -->
+    <section class="stats-bar">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Офлайн и локально</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-visits-count">1 240</div>
+          <div class="stat-label">Посещений сайта</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-downloads-count">310</div>
+          <div class="stat-label">Скачиваний приложения</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Форматов экспорта книги</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE FEATURES SECTION -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">инструменты автора</div>
+          <h2>Всё, чтобы довести черновик до точки</h2>
+          <p class="section-sub">Мы убрали всё лишнее и оставили то, что действительно нужно писателю для комфортной и глубокой работы над книгой.</p>
+        </div>
+
+        <div class="feature-grid">
+          <!-- 1. Git for Writers -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v12M18 9a9 9 0 0 0-9 9"/></svg>
+            </div>
+            <h3>Git для книги</h3>
+            <p>Полноценный контроль версий для вашей рукописи: ветки (branches), контрольные точки (commits), история правок и сравнение изменений (Diff). Пишите смело, зная, что любой удаленный фрагмент можно вернуть.</p>
+          </article>
+
+          <!-- 2. Nodes & Branches (Signature) -->
+          <article class="feature-card feature-card--signature">
+            <span class="feature-pill" style="background: rgba(200, 80, 70, 0.2); border-color: var(--crimson); color: var(--crimson-light);">Экспериментальная функция</span>
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M3 12h6m6 0h6M12 3v6m0 6v6"/></svg>
+            </div>
+            <h3>Ноды и ветки сюжета</h3>
+            <p>Экспериментальная система нод: визуализируйте развилки сюжета, пробуйте альтернативные концовки в отдельных ветках-нодах и безопасно объединяйте лучшие идеи в финал.</p>
+          </article>
+
+          <!-- 3. Project Map / Hierarchy -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </div>
+            <h3>Карта проекта</h3>
+            <p>Компактное дерево вашей книги: свободно перетаскивайте главы, страницы, сцены и папки местами, меняйте их порядок и держите всю структуру романа под полным контролем.</p>
+          </article>
+
+          <!-- 4. Characters Section -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Раздел «Персонажи»</h3>
+            <p>Отдельный единый каталог всех героев вашей книги. Просматривайте карточки персонажей, их роли в сюжете, внешность, важные черты и упоминания в главах в один клик.</p>
+          </article>
+
+          <!-- 5. Split Screen -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Сплит-экран</h3>
+            <p>Разделение рабочей зоны на две панели: открывайте две главы, черновик и заметки или сравнивайте альтернативные версии текста бок о бок без переключения окон.</p>
+          </article>
+
+          <!-- 6. Statistics & Insights -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3>Статистика книги</h3>
+            <p>Подробная аналитика прогресса: подсчет написанных слов и знаков, темп письма, динамика продуктивности по дням и расчет времени чтения каждой главы.</p>
+          </article>
+
+          <!-- 7. Writing Sprints -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Таймер спринтов письма</h3>
+            <p>Режим непрерывной печати: ставьте таймер на 15 или 25 минут, разгоняйте темп и пишите черновик, не отвлекаясь на сомнения и редактуру.</p>
+          </article>
+
+          <!-- 8. Research Browser -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Встроенный ресерч</h3>
+            <p>Собирайте исторические справки, фотографии эпохи и выдержки из статей прямо внутри проекта книги. Никаких потерянных закладок в браузере.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPRINT SIMULATOR DEMO -->
+    <section id="sprint-demo" class="sprint-demo-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">интерактивное демо</div>
+          <h2>Попробуйте спринт прямо сейчас</h2>
+          <p class="section-sub">Запустите таймер и напишите несколько предложений без остановки. Почувствуйте, как легко преодолеть писательский блок.</p>
+        </div>
+
+        <div class="sprint-demo-container">
+          <div class="sprint-demo-header">
+            <div class="sprint-timer-display">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span id="sprint-timer-val">02:00</span>
+            </div>
+
+            <div class="sprint-stats-live">
+              <span>Слов: <strong id="sprint-word-count">0</strong></span>
+              <span>Скорость: <strong id="sprint-speed">0 сл/мин</strong></span>
+            </div>
+
+            <button id="sprint-toggle-btn" class="btn btn-primary sprint-timer-btn">Начать спринт</button>
+          </div>
+
+          <div class="sprint-demo-body">
+            <textarea 
+              id="sprint-textarea" 
+              class="sprint-textarea" 
+              placeholder="Начните писать здесь... Не думайте о грамматике и запятых, просто выплесните историю на экран."
+            ></textarea>
+          </div>
+
+          <div class="sprint-demo-footer">
+            <span>✨ В приложении WriteCola доступна детальная статистика и графики продуктивности</span>
+            <span>Таймер на 2 минуты</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED VIDEO TUTORIALS SECTION -->
+    <section id="tutorials-preview" class="featured-tutorials-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">обучение и видео</div>
+          <h2>Видеоуроки и инструкции</h2>
+          <p class="section-sub">Пошаговые видео-руководства, которые помогут освоить все возможности WriteCola за считанные минуты.</p>
+        </div>
+
+        <!-- Featured cards rendered dynamically -->
+        <div id="featured-tutorials-grid" class="tutorials-preview-grid">
+          <!-- Populated from JS with latest tutorials -->
+        </div>
+
+        <!-- BIG BANNER LINKING TO DEDICATED TUTORIALS HUB -->
+        <div class="hub-banner-cta">
+          <div class="hub-banner-content">
+            <div class="eyebrow" style="color: var(--gold-light);">большая видеобаза</div>
+            <h3>Отдельный раздел со всеми видеоуроками</h3>
+            <p>Мы собрали каталог обучающих видео с удобным поиском по темам, фильтрацией по главам, таймкодами и отметками о просмотре.</p>
+          </div>
+          <a href="tutorials.html" class="btn btn-primary btn-lg">
+            Перейти в каталог уроков
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD HUB -->
+    <section id="download" class="download-hub">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-info">
+            <div class="eyebrow">установка на компьютер</div>
+            <h2>Скачать WriteCola для ПК</h2>
+            <p id="download-desc" class="download-desc">
+              Загрузите архив с приложением, распакуйте и запустите установщик. WriteCola не требует подключения к серверу — ваши книги принадлежат только вам.
+            </p>
+
+            <dl class="download-meta-list">
+              <div class="download-meta-item">
+                <dt>Версия</dt>
+                <dd id="dl-version">v1.0.0</dd>
+              </div>
+              <div class="download-meta-item">
+                <dt>Размер архива</dt>
+                <dd id="dl-size">106 МБ</dd>
+              </div>
+              <div class="download-meta-item">
+                <dt>Платформа</dt>
+                <dd id="dl-platform">Windows 10/11 (64-bit)</dd>
+              </div>
+            </dl>
+
+            <p id="dl-requirements" style="font-size: 12.5px; color: var(--text-dim); margin-top: 10px;">
+              Требования: Windows 10/11 (64-bit), 4 ГБ ОЗУ, 300 МБ на диске.
+            </p>
+          </div>
+
+          <div class="download-action-column">
+            <div class="hero-badge" style="margin-bottom: 0; padding: 4px 14px; font-size: 12px;">
+              <span class="pulse-dot"></span>
+              <span id="dl-counter-badge">310+ скачиваний</span>
+            </div>
+
+            <a id="main-download-btn" href="https://github.com/dreamdorn2025-ctrl/writecola-site/releases/download/1.0.0/WriteCola.7z" class="btn btn-primary btn-lg" style="width: 100%;">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Скачать WriteCola (.7z)
+            </a>
+
+            <div class="download-security-note">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--moss-light)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Проверено: без вирусов и скрытого ПО</span>
+            </div>
+
+            <p style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">
+              Распакуйте скачанный <code>.7z</code> архив и запустите <code>WriteCola.exe</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">частые вопросы</div>
+          <h2>Ответы на популярные вопросы</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Где хранятся мои тексты и черновики?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Все файлы проекта сохраняются исключительно на вашем жестком диске в виде стандартных открытых файлов. Никакие данные не отправляются на сторонние серверы без вашего согласия.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Как работает версионирование (ветки) для текста?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Вы можете в любой момент создать новую ветку (например, «Альтернативная концовка»). В ней вы свободно переписываете текст, а основной черновик остается нетронутым. Если правки удались — вы нажимаете «Слить», и они объединяются.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Будет ли версия для macOS и Linux?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Да, сборки под macOS (Apple Silicon и Intel) и Linux (.AppImage) находятся на этапе финализации и станут доступны в ближайших обновлениях.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Как предложить идею для новой функции или видеоурока?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Мы всегда открыты к предложениям! Напишите нам напрямую на почту <a href="mailto:dreamdorn2025@gmail.com" style="color: var(--gold-light); text-decoration: underline;">dreamdorn2025@gmail.com</a> — мы регулярно внедряем функции на основе пожеланий авторов.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="content/media/logo.svg" alt="WriteCola Logo" class="brand-logo-img" width="36" height="36" />
+            <div class="brand-text">
+              <span class="brand-name">Write<span>Cola</span></span>
+              <span class="brand-badge">Studio for Authors</span>
+            </div>
+          </div>
+          <p>Специализированный редактор для тех, кто дописывает книги до конца.</p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Возможности</a></li>
+            <li><a href="tutorials.html">Каталог видеоуроков</a></li>
+            <li><a href="#sprint-demo">Спринты письма</a></li>
+            <li><a href="#download">Скачать установщик</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Обратная связь & Ссылки</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:dreamdorn2025@gmail.com">Написать разработчику (dreamdorn2025@gmail.com)</a></li>
+            <li><a href="https://github.com/dreamdorn2025-ctrl/writecola-site/releases" target="_blank" rel="noopener">Архив релизов</a></li>
+            <li><span style="font-family: var(--font-mono); font-size: 12px; color: var(--gold-light);">👁️ Просмотров: <span id="footer-visits-count">1 240</span></span></li>
+            <li><span style="font-family: var(--font-mono); font-size: 12px; color: var(--moss-light);">📥 Скачиваний: <span id="footer-downloads-count">310</span></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 WriteCola. Все права защищены.</span>
+        <span>Связь: <a href="mailto:dreamdorn2025@gmail.com" style="color: var(--gold-light);">dreamdorn2025@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
 </body>
 </html>
